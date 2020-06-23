@@ -43,23 +43,7 @@ class FBeamer
             let data = req.body;
             console.log(data);
             data.entry.forEach(pageObj =>{
-                console.log(pageObj);
-                if(pageObj.standby){
-                    pageObj.standby.forEach(msgEvent => {
-                        console.log(msgEvent);
-
-                        let messageObj='';
-                        if(msgEvent.message){
-                            messageObj={
-                            sender: msgEvent.sender.id,
-                            pageId:msgEvent.recipient.id,
-                            timeOfMessage: msgEvent.timestamp,
-                            message: msgEvent.message
-                            }
-                        }
-                        cb(messageObj);
-                    });
-                }
+                console.log(pageObj);                
                 if(pageObj.messaging){
                     pageObj.messaging.forEach(msgEvent => {
                         console.log(msgEvent);
@@ -71,6 +55,14 @@ class FBeamer
                                 OwnerAppId: msgEvent.pass_thread_control.new_owner_app_id,
                                 metadata:msgEvent.pass_thread_control.metadata,
                                 isHandoverMessage:true
+                            }
+                        }
+                        else if(msgEvent.message){
+                            messageObj={
+                            sender: msgEvent.sender.id,
+                            pageId:msgEvent.recipient.id,
+                            timeOfMessage: msgEvent.timestamp,
+                            message: msgEvent.message
                             }
                         }
                         cb(messageObj);
