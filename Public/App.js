@@ -59,8 +59,9 @@ class App extends React.Component {
         return (
             <div className="container">
                 <br></br>
-                <div className="row pt-20">                                   
-                <div className="panel panel-primary">                    
+                <div className="row pt-20">  
+                    <div className="col-sm-9 col-9">                                 
+                        <div className="panel panel-primary">                    
                             <div className="panel-heading">Below you can choose the options for buying:-</div>
                             <div className="panel-body">
                                 <form action="/options/orderspostback" method="get"> 
@@ -73,6 +74,7 @@ class App extends React.Component {
                         </div>
                         <h4>We are displaying the grocery list now.</h4> 
                         <h4>The site is in construction for the Grocery Delivery. </h4>
+                    </div>
                 </div>
             </div>
         );
