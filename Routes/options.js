@@ -33,7 +33,7 @@ if (referer) {
 res.sendFile(path.resolve("Public","Index.html"));
 });
 
-router.get('/optionspostback', (req, res) => {
+router.get('/orderspostback', (req, res) => {
     let body = req.query;
     console.log(body.orderStatus);
     let metadata={orderStatus:body.orderStatus};

@@ -64,7 +64,7 @@ class App extends React.Component {
                 <div className="panel panel-primary">                    
                             <div className="panel-heading">Below you can choose the options for buying:-</div>
                             <div className="panel-body">
-                                <form action="/options/optionspostback" method="get"> 
+                                <form action="/options/orderspostback" method="get"> 
                                 <input type="hidden" name="psid" id="psid" value={this.state.userId}></input>
                                 <input type="hidden" name="orderStatus" value={this.state.orderStatus}></input>
                                 {this.createGroceryList()}

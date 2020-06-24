@@ -26,7 +26,7 @@ router.post('/',
 	(req, res, next) => {
         var serverURL = 'https://' + req.get('host');
 		f.incoming(req, res, msg => {
-			// Process messages
+            // Process messages
             const {
                 message,
                 sender,
@@ -42,12 +42,7 @@ router.post('/',
                         let m=response[index];
                         f.txt(sender, m,pageId);
                     }
-            }
-            else if (message) {
-                let metadata={message};
-                f.passControl(sender,config.fb.groceryGenAppId,metadata);
-                
-            }         
+            }       
 		});
 		return next();
 	});
