@@ -71,7 +71,8 @@ class App extends React.Component {
                                 </form>
                             </div>
                         </div>
-                        <h4>We are displaying the grocery list now. The site is in construction for the Grocery Delivery.</h4> 
+                        <h4>We are displaying the grocery list now.</h4> 
+                        <h4>The site is in construction for the Grocery Delivery. </h4>
                 </div>
             </div>
         );
